@@ -10,7 +10,7 @@ fun main() {
 
     // 定义一种报警方式，配个默认的邮箱
     val emailAlarm = EmailAlarm.buildQQDefaultEmailSender()
-    // 定义一个报警限流器， 每五秒最多通知一次。 如果五秒内多次报警，等待下一个五秒一起发送
+    // 定义一个报警限流器， 每五秒最多通知一次。 如果五秒内多次报警，攒着等待下一个五秒一起发送
     val limiter = AlarmLimiter(5, TimeUnit.SECONDS, emailAlarm)
     // 设置某业务值报警阈值为 10
     val threshold = 10
